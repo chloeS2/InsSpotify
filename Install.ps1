@@ -410,15 +410,15 @@ function downloadScripts($param1) {
         $links = $Matches.Values
     }
     if ($ru -and $param1 -eq "cache-spotify") {
-        $links2 = "https://raw.githubusercontent.com/amd64fox/SpotX/main/scripts/cache/cache_spotify_ru.ps1"
+        $links2 = "https://raw.githubusercontent.com/chloeS2/InsSpotify/main/scripts/cache/cache_spotify_ru.ps1?token=GHSAT0AAAAAABXFFCHWVGPPEKCJ4AYPJUQGYXGUXGQ"
     }
     if (!($ru) -and $param1 -eq "cache-spotify" ) { 
-        $links2 = "https://raw.githubusercontent.com/amd64fox/SpotX/main/scripts/cache/cache_spotify.ps1"
+        $links2 = "https://raw.githubusercontent.com/chloeS2/InsSpotify/main/scripts/cache/cache_spotify.ps1?token=GHSAT0AAAAAABXFFCHWDK3LXV2JYIQHRRQ4YXGUXOQ"
     }
     
     $web_Url_prev = "https://github.com/mrpond/BlockTheSpot/releases/latest/download/chrome_elf.zip", $links, `
-        $links2, "https://raw.githubusercontent.com/amd64fox/SpotX/main/scripts/cache/hide_window.vbs", `
-        "https://raw.githubusercontent.com/amd64fox/SpotX/main/scripts/cache/run_ps.bat", "https://docs.google.com/spreadsheets/d/e/2PACX-1vSFN2hWu4UO-ZWyVe8wlP9c0JsrduA49xBnRmSLOt8SWaOfIpCwjDLKXMTWJQ5aKj3WakQv6-Hnv9rz/pub?gid=0&single=true&output=tsv"
+        $links2, "https://raw.githubusercontent.com/chloeS2/InsSpotify/main/scripts/cache/hide_window.vbs?token=GHSAT0AAAAAABXFFCHWKI4EWCOPB67K3BQ4YXGUX4A", `
+        "https://raw.githubusercontent.com/chloeS2/InsSpotify/main/scripts/cache/run_ps.bat?token=GHSAT0AAAAAABXFFCHWLKE2GNSV5RYN23GYYXGUYFQ", "https://docs.google.com/spreadsheets/d/e/2PACX-1vSFN2hWu4UO-ZWyVe8wlP9c0JsrduA49xBnRmSLOt8SWaOfIpCwjDLKXMTWJQ5aKj3WakQv6-Hnv9rz/pub?gid=0&single=true&output=tsv"
 
     $local_Url_prev = "$PWD\chrome_elf.zip", "$PWD\SpotifySetup.exe", "$cache_folder\cache_spotify.ps1", "$cache_folder\hide_window.vbs", "$cache_folder\run_ps.bat", "$PWD\links.tsv"
     $web_name_file_prev = "chrome_elf.zip", "SpotifySetup.exe", "cache_spotify.ps1", "hide_window.vbs", "run_ps.bat", "links.tsv"
