@@ -196,7 +196,7 @@ function Set-ScriptLanguageStrings {
             Spicetify       = "Spicetify detected"
             NoRestore       = "InsSpotify has already been installed, xpui.js and xpui.css not found. `nPlease uninstall Spotify client and run Install.bat again"
             ExpSpotify      = "Experimental features operated by Spotify"
-            ExpStandart     = "Experimental features of SpotX are not included"
+            ExpStandart     = "Experimental features of InsSpotify are not included"
             NoRestore2      = "InsSpotify has already been installed, xpui.bak not found. `nPlease uninstall Spotify client and run Install.bat again"
             UpdateBlocked   = "Spotify updates are already blocked"
             UpdateError     = "Failed to block updates"
@@ -259,10 +259,10 @@ function Set-ScriptLanguageStrings {
             Error           = "Ошибка"
             FileLocBroken   = "Расположение файлов Spotify нарушено, удалите клиент и снова запустите скрипт"
             Spicetify       = "Обнаружен Spicetify"
-            NoRestore       = "SpotX уже был установлен, но файлы для восстановления xpui.js.bak и xpui.css.bak не найдены. `nУдалите клиент Spotify и снова запустите Install.bat"
+            NoRestore       = "InsSpotify уже был установлен, но файлы для восстановления xpui.js.bak и xpui.css.bak не найдены. `nУдалите клиент Spotify и снова запустите Install.bat"
             ExpSpotify      = "Экспериментальные функции управляются Spotify"
-            ExpStandart     = "Экспериментальные функции SpotX не включены"
-            NoRestore2      = "SpotX уже был установлен, но файл для восстановления xpui.bak не найден. `nУдалите клиент Spotify и снова запустите Install.bat"
+            ExpStandart     = "Экспериментальные функции InsSpotify не включены"
+            NoRestore2      = "InsSpotify уже был установлен, но файл для восстановления xpui.bak не найден. `nУдалите клиент Spotify и снова запустите Install.bat"
             UpdateBlocked   = "Обновления Spotify уже заблокированы"
             UpdateError     = "Не удалось заблокировать обновления"
             NoSpotifyExe    = "Spotify.exe не найден"
@@ -1161,7 +1161,7 @@ if (Test-Path $xpui_js_patch) {
     $writer = New-Object System.IO.StreamWriter -ArgumentList $xpui_js_patch
     $writer.BaseStream.SetLength(0)
     $writer.Write($xpui_js)
-    $writer.Write([System.Environment]::NewLine + '// Patched by SpotX') 
+    $writer.Write([System.Environment]::NewLine + '// Patched by InsSpotify') 
     $writer.Close()  
 
     # Russian additional translation
@@ -1309,7 +1309,7 @@ If (Test-Path $xpui_spa_patch) {
     $writer = New-Object System.IO.StreamWriter($entry_xpui.Open())
     $writer.BaseStream.SetLength(0)
     $writer.Write($xpui_js)
-    $writer.Write([System.Environment]::NewLine + '// Patched by SpotX') 
+    $writer.Write([System.Environment]::NewLine + '// Patched by InsSpotify') 
     $writer.Close()
 
     # Disable Sentry (vendor~xpui.js)
