@@ -356,7 +356,7 @@ function incorrectValue {
 
 function Check_verison_clients($param2) {
 
-    # checking the recommended version for spotx
+    # checking the recommended version for InsSpotify
     if ($param2 -eq "online") {
         $ProgressPreference = 'SilentlyContinue' # Hiding Progress Bars
         $readme = Invoke-WebRequest -UseBasicParsing -Uri https://raw.githubusercontent.com/amd64fox/SpotX/main/README.md
@@ -592,7 +592,7 @@ if ($testHosts) {
 
 # Unique directory name based on time
 Push-Location -LiteralPath $env:TEMP
-New-Item -Type Directory -Name "SpotX_Temp-$(Get-Date -UFormat '%Y-%m-%d_%H-%M-%S')" | Convert-Path | Set-Location
+New-Item -Type Directory -Name "InsSpotify_Temp-$(Get-Date -UFormat '%Y-%m-%d_%H-%M-%S')" | Convert-Path | Set-Location
 
 if ($premium) {
     Write-Host ($lang).Prem`n
@@ -1099,7 +1099,7 @@ if (Test-Path $xpui_js_patch) {
     $xpui_test_js = $reader.ReadToEnd()
     $reader.Close()
         
-    If ($xpui_test_js -match 'patched by spotx') {
+    If ($xpui_test_js -match 'patched by InsSpotify') {
 
         $test_xpui_js_bak = Test-Path -Path $xpui_js_bak_patch
         $test_xpui_css_bak = Test-Path -Path $xpui_css_bak_patch
@@ -1224,10 +1224,10 @@ If (Test-Path $xpui_spa_patch) {
     $zip = [System.IO.Compression.ZipFile]::Open($xpui_spa_patch, 'update')
     $entry = $zip.GetEntry('xpui.js')
     $reader = New-Object System.IO.StreamReader($entry.Open())
-    $patched_by_spotx = $reader.ReadToEnd()
+    $patched_by_InsSpotify = $reader.ReadToEnd()
     $reader.Close()
 
-    If ($patched_by_spotx -match 'patched by spotx') {
+    If ($patched_by_InsSpotify -match 'patched by InsSpotify') {
         $zip.Dispose()    
 
         if ($test_bak_spa) {
